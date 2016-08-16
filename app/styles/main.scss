@@ -1,0 +1,66 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+//@import 'sass-bootstrap/lib/bootstrap';
+
+
+body{
+  font-family: 'Roboto', Helvetica, arial, sans-serif;
+  font-size: 14px;
+}
+.header {
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 0;
+  margin-bottom: 10px;
+}
+b{
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+pre{
+  background: rgb(239, 239, 239);
+  font-size: 10px;
+}
+.ng-invalid{
+  border-color: red;
+}
+
+/**
+ * Email Contacts
+ */
+.selectize-control.contacts .selectize-input [data-value]  {
+    .email{
+        opacity: 0.5;
+        &::before{
+            content: '<';
+        }   
+        &::after{
+            content: '>';
+        }   
+    }
+}
+//.selectize-control.contacts .selectize-dropdown .caption {
+  //  font-size: 12px;
+    //display: block;
+    //opacity: 0.5;
+//}
+.collection{
+    .collection-item.avatar.suggestion-dropdown-item{
+        min-height: 60px;
+    }
+}
+
+.input-field.tag-input{
+    padding-left:40px;
+    label{
+        left:0px;
+    }
+    &.input-active{
+        &.label{
+        left:0px;
+    }
+    }
+    
+}
+
+
