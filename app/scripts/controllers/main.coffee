@@ -3,6 +3,8 @@
 angular.module('emailClientApp')
   .controller 'MainCtrl', ["$scope","Apiservice",($scope,Api) ->
     $scope.emails
+    $scope.emailsCC
+    
     # email dropdown for first taggedInputBox
     Api.getAllEmails().then (allEmails)->
         if allEmails and allEmails.data
