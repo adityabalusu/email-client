@@ -18,7 +18,6 @@ gem install compass
 `cd` into the repo and run
 ```
 npm install 
-bower install
 ```
 
 
