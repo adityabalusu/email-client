@@ -23,6 +23,8 @@ angular.module('emailClientApp')
                   persist: true
                   labelText:labelText
                   maxItems: null
+                  #Below regex splits only pasted tokens by either a comma, semicolon or 2+ consecutive spaces
+                  splitOn:/[,;]|(\s{2,})/
                   valueField: 'email'
                   openOnFocus:false
                   inputClass:"input-field tag-input selectize-input"
