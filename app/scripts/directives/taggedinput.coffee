@@ -28,7 +28,7 @@ angular.module('emailClientApp')
                   valueField: 'email'
                   openOnFocus:false
                   closeAfterSelect: true
-                  inputClass:"input-field tag-input selectize-input"
+                  inputClass:"input-field tag-input chips selectize-input"
                   labelField: 'displayName'
                   dropdownContentClass:"selectize-dropdown-content  collection"
                   plugins: [ 'remove_button',"restore_on_backspace" ]

@@ -1266,16 +1266,16 @@
 				}
 				e.preventDefault();
 			} else if ((eventName === 'mousedown' && self.isCtrlDown) || (eventName === 'keydown' && this.isShiftDown)) {
-				if ($item.hasClass('active')) {
+				if ($item.hasClass('selected active')) {
 					idx = self.$activeItems.indexOf($item[0]);
 					self.$activeItems.splice(idx, 1);
-					$item.removeClass('active');
+					$item.removeClass('selected active');
 				} else {
-					self.$activeItems.push($item.addClass('active')[0]);
+					self.$activeItems.push($item.addClass('selected active')[0]);
 				}
 			} else {
-				$(self.$activeItems).removeClass('active');
-				self.$activeItems = [$item.addClass('active')[0]];
+				$(self.$activeItems).removeClass('selected active');
+				self.$activeItems = [$item.addClass('selected active')[0]];
 			}
 	
 			// ensure control has focus
