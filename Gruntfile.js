@@ -1,5 +1,6 @@
 // Generated on 2016-08-10 using generator-angular 0.7.1
 'use strict';
+var SERVER_PORT = 9000;
 
 // # Globbing
 // for performance reasons we're only matching one level down:
@@ -58,7 +59,7 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 9000,
+        port: SERVER_PORT,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
         livereload: 35729
