@@ -1,5 +1,18 @@
-node_modules
-dist
-.tmp
 .sass-cache
+.tmp
+.swp
+.swo
+/node_modules/
+/dist/
+UI.sublime-workspace
+UI.sublime-project
+.DS_Store
+.project
+deploy-uitest.sh
+dist-*.tgz
+email-client-*.sublime*
+*.sublime*
+npm-debug.log
+
+
 
