@@ -1,19 +1,36 @@
 'use strict'
 
-angular.module('emailClientApp')
+angular.module('workSpanApp')
   .controller 'MainCtrl', ["$scope","Apiservice",($scope,Api) ->
-    $scope.emails
-    $scope.emailsCC
-    
-    # email dropdown for first taggedInputBox
-    Api.getAllEmails().then (allEmails)->
-        if allEmails and allEmails.data
-            $scope.emailsOptions = allEmails.data
+    # Getting all questions
+    Api.getAllQuestions()
+       .then (questions)->
+          ### 
+          # Use the below block if data needs to persisted
+          ###
+          #questionsString = localStorage.getItem "workSpanQuestions"
+          #$scope.questions = JSON.parse questionsString 
+
+          $scope.questions = questions
+       .catch () ->
+          # Handle rejection
+          alert("question api failed")
         
 
-    # email dropdown for second taggedInputBox
-    Api.getDiffEmails().then (diffEmails)->
-        if diffEmails and diffEmails.data
-            $scope.emailsOptions2 = diffEmails.data
-        
+    # Getting all answers
+    Api.getAllAnswers()
+       .then (answers)->
+          ### 
+          # Use the below block if data needs to persisted
+          ###
+          #answersString = localStorage.getItem "workSpanAnswers"
+          #$scope.answers = JSON.parse answersString
+
+          $scope.answers = answers
+       .catch ()->
+          # Handle rejection
+          alert("answer api failed")
+    
+
+    
 ]

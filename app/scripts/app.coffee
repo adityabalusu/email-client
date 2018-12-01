@@ -1,21 +1,28 @@
 'use strict'
 
-angular.module('emailClientApp', [
+angular.module('workSpanApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'selectize'
-  'ngMockE2E'
+  'ngMaterial'
+  
 ])
-  .config ($routeProvider) ->
+  .config ($routeProvider,$locationProvider) ->
+    
+    $routeProvider
+      .when '/question/:questionID',
+        templateUrl: 'views/questionDetails.html'
+        controller: 'QuestionCtrl'
+      .otherwise
+        redirectTo: '/'
     $routeProvider
       .when '/',
         templateUrl: 'views/main.html'
         controller: 'MainCtrl'
       .otherwise
         redirectTo: '/'
-  .run ($httpBackend,Fakebackend) ->
-    # passThrough to prevent intereference of $httpBackend.flush() with ngRoute. 
-    $httpBackend.whenGET(/\.html$/).passThrough();
-    do Fakebackend.setup
+    $locationProvider.hashPrefix("");
+  .run () ->
+    
+   

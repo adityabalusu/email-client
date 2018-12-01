@@ -1,0 +1,19 @@
+<md-card>
+    <md-card-content>
+     <p ng-bind-html="question.Text"> </p>
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="start center">
+      <md-card-icon-actions>
+        <md-button ng-click="upvote(question)">
+            <span><i style="font-size:14px;" class="material-icons small"> thumb_up</i></span>
+            <span>{{question.upvotes || 0}}</span>
+        </md-button>
+        <md-button ng-click="downvote(question)">
+            <span><i style="font-size:14px;" class="material-icons small"> thumb_down</i></span>
+            <span>{{question.downvotes || 0}}</span>
+        </md-button>
+      </md-card-icon-actions>
+      <md-button ng-href="#/question/{{question.Id}}">Show answers</md-button>
+    </md-card-actions>
+</md-card>
+
