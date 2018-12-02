@@ -9,6 +9,8 @@ angular.module('workSpanApp')
        .catch () ->
           # Handle rejection
           alert("questions api failed")
+
+          
     # Getting all answers
     Api.getAllAnswers()
        .then (answers)->

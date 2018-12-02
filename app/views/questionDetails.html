@@ -1,16 +1,22 @@
 <div>
-<md-toolbar style="padding-left:22px;">
-    <div layout="column" layout-margin>
-        <h2>{{question.Id}}</h2>
-    </div>
-</md-toolbar>
+    <md-toolbar style="padding-left:22px;">
+        <div layout="column" layout-margin>
+            <h2>{{question.Id}}</h2>
+        </div>
+    </md-toolbar>
 </div>
-
 <div layout="column" layout-margin>
     <question-card  question = "question"></question-card>
     <md-content>
-            <md-list flex>
-                <answer-card ng-repeat="answer in answers track by answer.Id" answer="answer"></answer-card>
-            </md-list>
+        <div>
+            <md-input-container class="md-block">
+                <label>Your Answer</label>
+                <textarea ng-model="user.newAnswer" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+            </md-input-container>
+        </div>
+        <md-button class="md-raised md-primary"  ng-click="addAnswer()">Add answer</md-button>
+        <md-list flex>
+            <answer-card ng-repeat="answer in answers | orderBy: orderByDate:true track by answer.Id " answer="answer"></answer-card>
+        </md-list>
     </md-content>
 </div>

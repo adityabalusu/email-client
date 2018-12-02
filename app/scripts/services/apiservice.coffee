@@ -5,10 +5,12 @@ angular.module('workSpanApp')
     questionURL = 'https://api.myjson.com/bins/dck5b'
     answerURL = 'https://api.myjson.com/bins/hildr'
     getAllQuestions :()-> 
+      # Using promises to ensure we handle edge cases before responding to controller. 
       deferredQuestionPromise = $q.defer()
       $http.get(questionURL)
            .then (questions)->
               if questions and questions.data and questions.data.feed_questions
+                # Stringify Answers and store in localStorage for persisting upvotes
                 stringifiedAnswers = JSON.stringify questions.data.feed_questions 
                 localStorage.setItem "workSpanQuestions",stringifiedAnswers
                 deferredQuestionPromise.resolve questions.data.feed_questions
@@ -20,6 +22,7 @@ angular.module('workSpanApp')
         
       return deferredQuestionPromise.promise
     getAllAnswers :()-> 
+      # Using promises to ensure we handle edge cases before responding to controller. 
       deferredAnswerPromise = $q.defer()
       $http.get(answerURL)
            .then (answers)->

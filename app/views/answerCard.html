@@ -14,9 +14,16 @@
                 </span>
             <span ng-if="!answer.created_by">
                     Created by: Unknown
-                </span>
+            </span>
+            &nbsp; 
+            <span>
+                <i style="font-size:14px;" class="material-icons small"> thumb_up</i>{{answer.upvotes || 0}}
+            </span>
+            &nbsp; 
+            <span>
+                <i style="font-size:14px;" class="material-icons small"> thumb_down</i>{{answer.downvotes || 0}}
+            </span>
         </h5>
-        <p>{{answer.created_by.Avatar}}</p>
         <span>
                 <p ng-bind-html="answer.Answer"></p>
         </span>
