@@ -1,1 +1,16 @@
-<p>This is the question details view</p>
+<div>
+<md-toolbar style="padding-left:22px;">
+    <div layout="column" layout-margin>
+        <h2>{{question.Id}}</h2>
+    </div>
+</md-toolbar>
+</div>
+
+<div layout="column" layout-margin>
+    <question-card  question = "question"></question-card>
+    <md-content>
+            <md-list flex>
+                <answer-card ng-repeat="answer in answers track by answer.Id" answer="answer"></answer-card>
+            </md-list>
+    </md-content>
+</div>

@@ -1,11 +1,15 @@
-<div layout="row" >
-
-</div>
+<div>
+    <md-toolbar style="padding-left:22px;">
+      <div layout="column" layout-margin>
+          <h2>Questions</h2>
+      </div>
+    </md-toolbar>
+  </div>
 
 <main layout="column" layout-margin>
   <md-content class="md-padding" layout-xs="column" layout="row">
     <div layout="column">
-      <question-card ng-repeat="question in questions track by $index" question = "question"></question-card>
+      <question-card answers-available="countAnswers(question)" ng-repeat="question in questions track by question.Id" question = "question"></question-card>
     </div>
   </md-content>
 </main>

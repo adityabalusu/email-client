@@ -13,7 +13,12 @@
             <span>{{question.downvotes || 0}}</span>
         </md-button>
       </md-card-icon-actions>
-      <md-button ng-href="#/question/{{question.Id}}">Show answers</md-button>
+      <md-button ng-href="#/question/{{question.Id}}" aria-label ="answersAvailable" >
+        <span ng-if="answersAvailable==0">Answer Question</span>
+        <span ng-if="answersAvailable==1">Show {{answersAvailable}} Answer</span>
+        <span ng-if="answersAvailable>1">Show {{answersAvailable}} Answers</span>
+      </md-button>
+      
     </md-card-actions>
 </md-card>
 

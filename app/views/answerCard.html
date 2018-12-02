@@ -1,0 +1,25 @@
+<md-list-item class="md-3-line md-long-text">
+    <img ng-if="answer.created_by && answer.created_by.Avatar" ng-src="{{answer.created_by.Avatar}}" class="md-avatar" alt="{{index}}"/>
+    <div ng-if="answer.created_by && !answer.created_by.Avatar" class="md-avatar" alt="{{index}}">
+        <i class="material-icons large">face</i>
+    </div>
+    <div class="md-list-item-text">
+        <h5>
+            {{answer.created_at}}
+            <span ng-if="answer.created_by && !answer.created_by.Name && !answer.created_by.Surname  ">
+                Created by: {{answer.created_by}}
+            </span>
+            <span ng-if="answer.created_by && (answer.created_by.Name || answer.created_by.Surname)  ">
+                    Created by: {{answer.created_by.Name +" "+ answer.created_by.Surname}}
+                </span>
+            <span ng-if="!answer.created_by">
+                    Created by: Unknown
+                </span>
+        </h5>
+        <p>{{answer.created_by.Avatar}}</p>
+        <span>
+                <p ng-bind-html="answer.Answer"></p>
+        </span>
+    </div>
+    <br>
+</md-list-item>

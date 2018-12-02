@@ -5,32 +5,28 @@ angular.module('workSpanApp')
     # Getting all questions
     Api.getAllQuestions()
        .then (questions)->
-          ### 
-          # Use the below block if data needs to persisted
-          ###
-          #questionsString = localStorage.getItem "workSpanQuestions"
-          #$scope.questions = JSON.parse questionsString 
-
           $scope.questions = questions
        .catch () ->
           # Handle rejection
-          alert("question api failed")
-        
-
+          alert("questions api failed")
     # Getting all answers
     Api.getAllAnswers()
        .then (answers)->
-          ### 
-          # Use the below block if data needs to persisted
-          ###
-          #answersString = localStorage.getItem "workSpanAnswers"
-          #$scope.answers = JSON.parse answersString
-
           $scope.answers = answers
        .catch ()->
           # Handle rejection
-          alert("answer api failed")
+          alert("answers api failed")
     
+    $scope.countAnswers = (question) ->
+         # count all answers are available for a given question
+         count = 0
+         if $scope.answers
+            for answer in $scope.answers 
+               if answer["Question-Id"] is question.Id
+                  count++
+         return count
+          
+         
 
-    
+         
 ]
